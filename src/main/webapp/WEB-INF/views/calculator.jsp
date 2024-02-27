@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Caculator</title>
+    <title>Calculator</title>
 </head>
 <body>
 <form method="post">
@@ -18,26 +18,20 @@
             Calculator
         </legend>
 
-        <input id="lettuce" type="checkbox" name="condiment" value="Lettuce">
-        <label for="lettuce">Lettuce</label>
-
-        <input id="tomato" type="checkbox" name="condiment" value="Tomato">
-        <label for="tomato">Tomato</label>
-
-        <input id="mustard" type="checkbox" name="condiment" value="Mustard">
-        <label for="mustard">Mustard</label>
-
-        <input id="sprouts" type="checkbox" name="condiment" value="Sprouts">
-        <label for="sprouts">Sprouts</label><br>
+        <legend>Calculator</legend>
+        <input type="number" name="firstNumber" required>
+        <input type="number" name="secondNumber" required><br>
         <hr>
-        <input type="submit" value="Save">
+        <input type="submit" value="Addition(+)" name="operator">
+        <input type="submit" value="Subtraction(-)" name="operator">
+        <input type="submit" value="Multiplication(*)" name="operator">
+        <input type="submit" value="Division(/)" name="operator">
     </fieldset>
 </form>
 
-<h5>Sandwich Condiments:
-    <c:forEach items="${condiment}" var="condiment" varStatus="loop">
-        <span>${condiment}</span>
-    </c:forEach>
-</h5>
+
+<h5>FirstNumber: ${firstNumber}</h5>
+<h5>SecondNumber: ${secondNumber}</h5>
+<h5>Result ${operator}: <span style="color: red">${result}</span></h5>
 </body>
 </html>
